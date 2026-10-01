@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f6f7f2">
+  <meta name="description" content="Gestisci i tuoi stendini in modo semplice.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Stendino">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon.svg">
+  <link rel="stylesheet" href="styles.css">
+  <title>STENDINO</title>
+</head>
+<body>
+  <main class="app-shell">
+    <section id="home" class="view home-view" aria-labelledby="app-title">
+      <header class="topbar"><h1 id="app-title">STENDINO</h1></header>
+      <div id="rack-list" class="rack-list" aria-live="polite"></div>
+      <footer class="footer">
+        <button id="settings-open" class="icon-button" type="button" aria-label="Apri impostazioni" title="Impostazioni">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8.1a3.9 3.9 0 1 0 0 7.8 3.9 3.9 0 0 0 0-7.8Zm9 4.9a9.3 9.3 0 0 0 0-2l-2.1-.7a7.3 7.3 0 0 0-.7-1.6l1-2-1.4-1.4-2 1a7.3 7.3 0 0 0-1.6-.7L13.5 3h-2l-.7 2.1a7.3 7.3 0 0 0-1.6.7l-2-1-1.4 1.4 1 2a7.3 7.3 0 0 0-.7 1.6L4 10.5v2l2.1.7a7.3 7.3 0 0 0 .7 1.6l-1 2 1.4 1.4 2-1a7.3 7.3 0 0 0 1.6.7l.7 2.1h2l.7-2.1a7.3 7.3 0 0 0 1.6-.7l2 1 1.4-1.4-1-2a7.3 7.3 0 0 0 .7-1.6L21 13Z"/></svg>
+        </button>
+      </footer>
+    </section>
+
+    <section id="settings" class="view settings-view" aria-labelledby="settings-title" hidden>
+      <header class="topbar settings-header">
+        <button id="settings-back" class="icon-button back-button" type="button" aria-label="Torna alla schermata principale">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+        </button>
+        <h1 id="settings-title">IMPOSTAZIONI</h1>
+      </header>
+      <div class="settings-content">
+        <div class="setting-card">
+          <div><h2>Soglia per il ritiro</h2><p>Dopo quanti giorni evidenziare lo stendino.</p></div>
+          <div class="stepper" aria-label="Soglia in giorni">
+            <button id="threshold-minus" class="step-button" type="button" aria-label="Diminuisci soglia">−</button>
+            <output id="threshold-value" aria-live="polite">2</output>
+            <span class="days-label">giorni</span>
+            <button id="threshold-plus" class="step-button" type="button" aria-label="Aumenta soglia">+</button>
+          </div>
+        </div>
+      </div>
+      <footer class="footer"><span class="footer-spacer"></span></footer>
+    </section>
+  </main>
+  <script src="app.js" defer></script>
+</body>
+</html>
