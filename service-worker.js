@@ -1,4 +1,5 @@
-const CACHE_NAME = "stendino-v1";
+// Nome stabile: il Service Worker aggiorna i contenuti della cache a ogni installazione.
+const CACHE_NAME = "stendino-runtime";
 const APP_SHELL = ["./", "./index.html", "./styles.css", "./app.js", "./manifest.webmanifest", "./icons/icon.svg"];
 
 self.addEventListener("install", (event) => {
@@ -17,16 +18,16 @@ self.addEventListener("fetch", (event) => {
   const request = event.request;
   if (request.method !== "GET" || new URL(request.url).origin !== self.location.origin) return;
   event.respondWith((async () => {
-    const cached = await caches.match(request);
-    if (cached) return cached;
     try {
       const response = await fetch(request);
-      if (response.ok && request.destination !== "document") {
+      if (response.ok && new URL(response.url).origin === self.location.origin) {
         const cache = await caches.open(CACHE_NAME);
-        cache.put(request, response.clone());
+        await cache.put(request, response.clone());
       }
       return response;
     } catch {
+      const cached = await caches.match(request);
+      if (cached) return cached;
       if (request.mode === "navigate") return (await caches.match("./index.html")) || Response.error();
       return Response.error();
     }
