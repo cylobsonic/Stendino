@@ -8,9 +8,9 @@
   -webkit-font-smoothing: antialiased;
   --page: #171c1a;
   --surface: #222a26;
-  --green: #263a30;
-  --yellow: #3b3625;
-  --red: #402b2b;
+  --green: #004d00;  /* 263a30 */
+  --yellow: #4d4d00; /* 3b3625 */
+  --red: #4d0000;    /* 402b2b */
   --ink: #e8eee9;
   --muted: #a5b0a8;
 }
