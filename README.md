@@ -1,6 +1,6 @@
 # STENDINO
 
-STENDINO è una piccola Progressive Web App per gestire due stendini, **VECCHIO** e **NUOVO**. Registra quando vengono messi all’aperto e segnala quando hanno raggiunto la soglia di ritiro impostata. Stato e preferenze sono salvati localmente nel browser; non sono richiesti account o servizi esterni.
+STENDINO è una piccola Progressive Web App per gestire due stendini, **VECCHIO** e **NUOVO**. Registra il tempo trascorso fuori e il periodo di riposo in casa, con soglie indipendenti configurabili. Stato e preferenze sono salvati localmente nel browser; non sono richiesti account o servizi esterni.
 
 ## Struttura
 
@@ -31,4 +31,12 @@ Caricare i file nella repository. In **Settings → Pages**, scegliere la sorgen
 
 Aprire l’app pubblicata almeno una volta con una connessione attiva per caricare e memorizzare le risorse. In seguito sarà disponibile anche offline. Per verificarlo, scollegare temporaneamente il dispositivo dalla rete e ricaricare la pagina. Su iPhone, aprire il sito in Safari e usare **Condividi → Aggiungi alla schermata Home** per installarlo.
 
-I dati restano nel browser e nel dispositivo in cui vengono inseriti; non sono sincronizzati tra dispositivi. La soglia predefinita è di due giorni e può essere modificata nelle impostazioni.
+I dati restano nel browser e nel dispositivo in cui vengono inseriti; non sono sincronizzati tra dispositivi. La soglia predefinita è di due giorni fuori e un giorno in casa. Entrambe si modificano nelle impostazioni; zero giorni in casa rende lo stendino subito pronto dopo il rientro.
+
+## Test
+
+Con Node.js installato, eseguire dalla cartella del progetto:
+
+```sh
+node --test tests/app.test.cjs
+```

@@ -35,12 +35,21 @@
       </header>
       <div class="settings-content">
         <div class="setting-card">
-          <div><h2>Soglia per il ritiro</h2><p>Dopo quanti giorni evidenziare lo stendino.</p></div>
-          <div class="stepper" aria-label="Soglia in giorni">
-            <button id="threshold-minus" class="step-button" type="button" aria-label="Diminuisci soglia">−</button>
+          <div><h2>Giorni fuori prima del ritiro</h2><p>Tempo di asciugatura prima di riportare dentro lo stendino.</p></div>
+          <div class="stepper" aria-label="Giorni fuori prima del ritiro">
+            <button id="threshold-minus" class="step-button" type="button" aria-label="Diminuisci giorni fuori">−</button>
             <output id="threshold-value" aria-live="polite">2</output>
             <span class="days-label">giorni</span>
-            <button id="threshold-plus" class="step-button" type="button" aria-label="Aumenta soglia">+</button>
+            <button id="threshold-plus" class="step-button" type="button" aria-label="Aumenta giorni fuori">+</button>
+          </div>
+        </div>
+        <div class="setting-card">
+          <div><h2>Giorni in casa prima della disponibilità</h2><p>Tempo di riposo prima di liberare lo stendino.</p></div>
+          <div class="stepper" aria-label="Giorni in casa prima della disponibilità">
+            <button id="inside-threshold-minus" class="step-button" type="button" aria-label="Diminuisci giorni in casa">−</button>
+            <output id="inside-threshold-value" aria-live="polite">1</output>
+            <span class="days-label">giorni</span>
+            <button id="inside-threshold-plus" class="step-button" type="button" aria-label="Aumenta giorni in casa">+</button>
           </div>
         </div>
       </div>
